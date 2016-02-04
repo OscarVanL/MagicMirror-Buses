@@ -1,0 +1,10 @@
+#brightonBuses div {
+	font-size: 18px;
+	line-height: 20px;
+	position: absolute;
+	right: 50px;
+	text-align: right;
+	top: 350px;
+	font-family: HelveticaNeue-Medium, sans-serif;
+	letter-spacing: 0.75px;
+}
