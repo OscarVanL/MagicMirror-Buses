@@ -10,15 +10,15 @@ This then is then appropriately ordered into a table which is shown on the Magic
 ##Configuation:
 
 ###[main.js](brightonBuses/main.js)
-busStop: xxxx, must be changed to configure the bus stop you wish to view. To find the appropriate bus stop I would recommend viewing remy's list of all Brighton Bus stops here: https://github.com/remy/brighton-buses/blob/master/data/all_stops.kml and finding the 4 digit code for your bus stop.
+'busStop: xxxx,' must be changed to configure the bus stop you wish to view. To find the appropriate bus stop I would recommend viewing remy's list of all Brighton Bus stops here: https://github.com/remy/brighton-buses/blob/master/data/all_stops.kml and finding the 4 digit code for your bus stop.
 
-busStopName:"xxxxxxxxxxx", should be changed to display your bus stop name.
+'busStopName:"xxxxxxxxxxx",' should be changed to display your bus stop name.
 
-busesShown: x, may be changed to show more/less buses on the mirror.
+'busesShown: x,' may be changed to show more/less buses on the mirror.
 
-refreshPeriod: xxxxx, refresh period in ms for the bus info, too regular might piss off Brighton busses or Yahoo. Mine is 30000.
+'refreshPeriod: xxxxx,' refresh period in ms for the bus info, too regular might piss off Brighton busses or Yahoo. Mine is 30000.
 
-noBusesMessage: "xxxxxxxxxxxxxx", text to display if there are no buses on the schedule.
+'noBusesMessage: "xxxxxxxxxxxxxx",' text to display if there are no buses on the schedule.
 
 ###[style.css](brightonBuses/style.css)
 
