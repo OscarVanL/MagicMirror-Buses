@@ -1,9 +1,11 @@
 var buses = { //Changeable variables used in this script
 	busStop: 6849, //Bus stop information shown
-	busStopName: "Wish Road", //Name of bus stop shown
+	busStopName1: "Wish", //Name of bus stop shown on line 1
+	busStopName2: "Road", //Name of bus stop shown on line 2
 	busesShown: 6, //Number of buses to show on list
 	refreshPeriod: 30000, //in milliseconds
 	noBusesMessage: "No buses found...", //Message to display if there are no buses.
+	opacityVariation: 0.15 //Amount to reduce opacity by per line of buses, set to 0 for no change. 0.15 by default.
 }
 
 busTimes()
@@ -11,13 +13,16 @@ setInterval(busTimes, buses.refreshPeriod);
 
 function busTimes( ){
 	var busAPI = "https://query.yahooapis.com/v1/public/yql?q=select%20content%20from%20html%20where%20url%3D%22http%3A%2F%2Fbh.buscms.com%2Fapi%2FREST%2Fhtml%2Fdepartureboard.aspx%3Fclientid%3DBrightonBuses%26sourcetype%3Dsiri%26format%3Djson%26stopid%3D"+buses.busStop+"%22%20and%20xpath%3D%27%2Fhtml%2Fbody%2Fdiv%5B1%5D%2Ftable%2Ftbody%2Ftr%2Ftd%27&format=json&callback=";
+	var busSymbol = "<i class='icon fa fa-bus dimmed wi'></i>"
 	var noBuses = "<tr><td style='width: 205px; text-align: right;'>" + buses.noBusesMessage + "</td></tr>";
-	var myTable = "<table><tr>Bus times ("+buses.busStopName+"):</tr>";
+	var myTable = "<table><tr><td></td><td></td><td style='text-align: right; font-size: 25px;'>"+buses.busStopName1+ "</td></tr>";
+	myTable+= "<tr><td></td><td></td><td style='text-align: right; font-size: 25px;'>"+buses.busStopName2+"</td></tr>";
 	var webSearch = $.getJSON(busAPI, function(json){
 	});
 	
 	webSearch.done(function(json) {
 		if(jQuery.isEmptyObject(json.query.results)){ //this is only entered if there are no buses upon refresh.
+
 			myTable+=noBuses;
 		}
 		
@@ -42,7 +47,7 @@ function busTimes( ){
 							busCount++;
 						}
 					}
-					opacity = opacity-0.15;
+					opacity = opacity-(buses.opacityVariation);
 				}
 			}
 			else{ //this is only entered if there are no buses upon refresh. This shouldn't really be entered but who knows...
@@ -51,6 +56,7 @@ function busTimes( ){
 		}
 		
 		myTable+="</table>";
+		document.getElementById("busIcon").innerHTML = busSymbol;
 		document.getElementById("busTable").innerHTML = myTable;
 	});
 	

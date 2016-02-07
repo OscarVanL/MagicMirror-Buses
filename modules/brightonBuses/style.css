@@ -1,10 +1,18 @@
-#brightonBuses div {
-	font-size: 18px;
-	line-height: 20px;
+#busTable {
 	position: absolute;
 	right: 50px;
 	text-align: right;
-	top: 350px;
+	top: 330px;
 	font-family: HelveticaNeue-Medium, sans-serif;
-	letter-spacing: 0.75px;
+	font-size: 30px;
+	letter-spacing: 0px;
+}
+
+#busIcon {
+	position: absolute;
+	right: 120px;
+	text-align: left;
+	top: 351px;
+	font-family: HelveticaNeue-Light, sans-serif;
+	font-size: 52px;
 }
