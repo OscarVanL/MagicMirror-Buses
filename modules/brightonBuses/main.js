@@ -60,10 +60,9 @@ function busTimes( ){
 		document.getElementById("busTable").innerHTML = myTable;
 	});
 	
-	webSearch.fail(function(json) { //this error catching doesn't seem to work.
-		myTable+="<tr><td style='width: 205px; text-align: right;'>Error getting bus data</td>/tr>";
-		myTable+="</table>";
-		document.getElementById("busTable").innerHTML = myTable;
+	webSearch.fail(function(json) { //Error catching for if internet connection lost. Hides the bus content.
+		document.getElementID("busIcon").innerHTML = ""; //Removes Bus Icon if error getting buses, internet connection likely down
+		console.log("Error getting bus info, hiding content");
 	});
 }
 
