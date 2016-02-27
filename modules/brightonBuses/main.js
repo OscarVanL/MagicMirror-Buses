@@ -5,7 +5,7 @@ var buses = { //Changeable variables used in this script
 	busesShown: 6, //Number of buses to show on list
 	refreshPeriod: 30000, //in milliseconds
 	noBusesMessage: "No buses found...", //Message to display if there are no buses.
-	opacityVariation: 0.15 //Amount to reduce opacity by per line of buses, set to 0 for no change. 0.15 by default.
+	opacityVariation: 0.1 //Amount to reduce opacity by per line of buses, set to 0 for no change. 0.15 by default.
 }
 
 setTimeout(busTimes, 1000);
