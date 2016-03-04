@@ -61,7 +61,7 @@ function busTimes( ){
 	});
 	
 	webSearch.fail(function(json) { //Error catching for if internet connection lost. Hides the bus content.
-		document.getElementID("busIcon").innerHTML = ""; //Removes Bus Icon if error getting buses, internet connection likely down
+		document.getElementId("busIcon").innerHTML = ""; //Removes Bus Icon if error getting buses, internet connection likely down
 		console.log("Error getting bus info, hiding content");
 	});
 }
